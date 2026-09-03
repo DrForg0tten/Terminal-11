@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>TERMINAL 11</title>
+<style>
+*{box-sizing:border-box}html,body{overflow-x:hidden}body{margin:0;background:#050505;color:#b7ffb7;font-family:"Courier New",monospace;min-height:100vh}body:before{content:"";position:fixed;inset:0;pointer-events:none;background:repeating-linear-gradient(to bottom,rgba(255,255,255,.025) 0 1px,transparent 2px 4px);z-index:10}.screen{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:20px}.terminal{width:min(900px,100%);min-height:560px;border:2px solid #496d49;background:#071007;padding:30px;box-shadow:0 0 30px #102010}.header{border-bottom:1px solid #315331;padding-bottom:15px;color:#6fa76f;font-size:14px}.title{text-align:center;font-size:clamp(25px,5vw,45px);letter-spacing:7px;margin:70px 0 15px;text-shadow:0 0 10px #4aff4a}.subtitle{text-align:center;color:#668066;margin-bottom:55px}.login{max-width:450px;margin:auto}label{display:block;margin-bottom:10px;color:#779777}input{width:100%;padding:15px;background:#020602;color:#b7ffb7;border:1px solid #416641;outline:0;font:17px "Courier New",monospace}button{width:100%;margin-top:15px;padding:14px;background:#0b180b;color:#9fff9f;border:1px solid #416641;font:inherit;cursor:pointer}button:hover{background:#132613;border-color:#9fff9f}.error{color:#ff6b6b;text-align:center;margin-top:15px;display:none}.content{display:none}.status{color:#7fff7f;margin:25px 0}.article{overflow-wrap:anywhere;border:1px solid #344d34;padding:35px;background:#00140055;line-height:1.8}.article h1{text-align:center;letter-spacing:5px}.article h2{text-align:center;color:#789878;font-size:14px;font-weight:normal}.blurred{filter:blur(3px);opacity:.55;user-select:none}.unknown{text-align:center;color:#fff;font-size:26px;letter-spacing:6px;margin:35px 0;text-shadow:0 0 15px #fff}.exit{margin-top:30px;border-color:#613535;color:#ff9999}.exit:hover{border-color:#f77;background:#210d0d}.secret{overflow-wrap:anywhere;display:none;margin-top:25px;border:1px solid #705c31;padding:35px;background:#100e07;color:#ddd3b0;line-height:1.9}.secret h1{text-align:center;color:#d8c48b;letter-spacing:4px}.secret h2{text-align:center;font-size:14px;color:#887d60}.quote{margin:30px 0;padding-left:20px;border-left:2px solid #9b8b58;font-style:italic;color:#cfc29d}.alive{text-align:center;color:#fff;font-size:28px;letter-spacing:7px;text-shadow:0 0 15px #fff;margin:35px 0}.footer{text-align:center;color:#3f593f;font-size:12px;margin-top:25px}@media(max-width:600px){.terminal{padding:18px}.article,.secret{padding:20px}.unknown,.alive{font-size:20px;letter-spacing:3px}}
+</style>
+</head>
+<body>
+<div class="screen"><main class="terminal">
+<div class="header">TERMINAL SYSTEM 07<br>CONNECTION: LOCAL<br>SECURITY LEVEL: █████</div>
+
+<section id="loginScreen">
+<div class="title">TERMINAL 11</div>
+<div class="subtitle">UNAUTHORIZED ACCESS PROHIBITED</div>
+<div class="login">
+<label>ВВЕДИТЕ ПАРОЛЬ:</label>
+<input id="password" type="password" autocomplete="off" placeholder="PASSWORD_">
+<button onclick="login()">[ ВОЙТИ ]</button>
+<div class="error" id="error">ACCESS DENIED — НЕВЕРНЫЙ КОД</div>
+</div>
+<div class="footer">LAST ACCESS: ████-██-██ 03:17</div>
+</section>
+
+<section id="mainContent" class="content">
+<div class="status">ACCESS GRANTED<br>ДОБРО ПОЖАЛОВАТЬ, ОПЕРАТОР.</div>
+<div class="article">
+<h1>ДОКУМЕНТ №11</h1>
+<h2>ГАЗЕТНЫЙ АРХИВ — ЧАСТИЧНО РАССЕКРЕЧЕНО</h2>
+<p style="text-align:center;color:#777">[ БОЛЬШАЯ ЧАСТЬ ФАЙЛА ПОВРЕЖДЕНА ]</p>
+<div class="blurred">████████████████████████████████████████<br>████████████████████████████████████████<br>██████ неизвестный объект ███████████████<br>████████████████████████████████████████<br>████████ наблюдение ████████████████████</div>
+<div class="unknown">UNKNOWN ALIVE</div>
+<div class="blurred">████████████████████████████████████████<br>████████ ОНА СМОТРИТ ██████████████████<br>████████████████████████████████████████</div>
+</div>
+<button class="exit" onclick="logout()">[ ВЫЙТИ ]</button>
+
+<div id="secretBox" class="secret">
+<h1>ДОКУМЕНТ №11</h1><h2>ПОЛНАЯ ВЕРСИЯ — ДОСТУП: UNKNOWN</h2><hr>
+<h1>«ОНА СМОТРЕЛА С НЕБА»</h1>
+<p>Сегодня система вновь зафиксировала присутствие неизвестного объекта над территорией.</p>
+<p>Никто не знает, когда она появилась. Никто не знает, откуда она пришла. Но она была здесь гораздо дольше, чем мы думали.</p>
+<div class="quote">«Как же больно мне было наблюдать с неба за вашими грехами.»</div>
+<p>Я видела, как вы строили свои дома. Как называли этот мир своим. Как делили его между собой.</p>
+<p>Вы думали, что никто не смотрит.</p><p>Но я смотрела.</p>
+<p>Я видела ваши войны.<br>Я видела ваши предательства.<br>Я видела тех, кто исчезал ночью.<br>Я видела тех, кто делал вид, что ничего не произошло.</p>
+<div class="quote">«»</div>
+<p>Я слишком долго смотрела на вас сверху.</p><p>И слишком долго молчала.</p>
+<p>В 03:17 система зафиксировала неизвестный сигнал. Через 11 секунд все камеры одновременно отключились.</p>
+<p>Перед отключением на всех экранах появилась одна и та же надпись.</p>
+<div class="alive">UNKNOWN ALIVE</div>
+<p>После этого объект исчез.</p><p>Однако архив продолжает получать сообщения. Каждую ночь.</p>
+<div class="quote">«С НЕБА.»</div><hr>
+<p>СТАТУС ДОКУМЕНТА №11: <b>НЕ УДАЛЁН</b></p>
+<p>СТАТУС UNKNOWN: <b>ALIVE</b></p>
+<p>ПОСЛЕДНЯЯ ПЕРЕДАЧА: <i>«...Я ВСЁ ЕЩЁ СМОТРЮ.»</i></p>
+</div>
+<div class="footer">TERMINAL CONNECTION ACTIVE</div>
+</section>
+</main></div>
+<script>
+function login(){const p=document.getElementById("password").value.trim();const e=document.getElementById("error");if(p==="N0VEMBER"){document.getElementById("loginScreen").style.display="none";document.getElementById("mainContent").style.display="block"}else{e.style.display="block";setTimeout(()=>e.style.display="none",2500)}}
+function logout(){const c=prompt("TERMINAL 11\n\nВведите код доступа:");if(c&&c.trim().toUpperCase()==="UNKNOWN"){document.getElementById("secretBox").style.display="block";document.getElementById("secretBox").scrollIntoView({behavior:"smooth"})}else if(c!==null)alert("ACCESS DENIED\n\nКОД НЕ РАСПОЗНАН.")}
+document.getElementById("password").addEventListener("keydown",e=>{if(e.key==="Enter")login()});
+</script>
+</body>
+</html>
